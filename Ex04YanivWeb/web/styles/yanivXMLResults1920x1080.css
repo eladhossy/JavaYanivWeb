@@ -1,0 +1,12 @@
+body
+{ font-size:14px;
+  font-family:Guttman Hodes;
+  position:relative;
+  background-color:Black;
+  color:White;
+}
+
+.banner {background-image:url(bg.png)}
+.notBanner {background-color:inherit;}
+input:hover {background-color:lime}
+input:focus{background-color: yellow}

@@ -1,0 +1,25 @@
+body {background-image:url("../1920x1080_Backgrounds/1.jpg")}
+.mainTbl {width:100%}
+.horizontalCards {margin-left:20%; padding-right:20%}
+.verticalCards{margin-left:10%}
+.topCards {padding-bottom:5%}
+.buttomCards {padding-top:5%}
+.centerPanel {width:100%}
+.yanivLogo {margin-left:20%; padding-right:20%;}
+.cardImg { padding:2px}
+.currentPlayerCards:hover {background-color:Lime}
+.playerPanel {font-size:12px;color:white ;}
+.sessionPlayer {background-color:#3bed0e}
+.message { font-size:20px;background-color: chartreuse; position: absolute; left:50%;border-color: white; border-style: solid}
+
+.deckHover:hover {background-color: white;
+box-shadow: 0px 0px 10px 10px #3ecfbe;}
+
+.pileHover:hover {background-color: white;
+box-shadow: 0px 0px 10px 10px #3ecfbe;}
+
+.selected{
+background-color: white;
+box-shadow: 0px 0px 10px 10px #3bed0e;
+}
+

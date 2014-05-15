@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Yaniv Input</title>
+    <link href="styles/yanivInput1920x1080.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/indexJS.js"></script>
+     <script type="text/javascript" src="scripts/AjaxForInitGame.js"></script>
+
+
+
+</head>
+<body>
+    
+    <table class="banner" width="100%" border="0"  cellspacing="0">
+        <tr>
+            <td>
+                 <img  src="images/yanivLogoSmallBlack.png" alt="Alternate Text" />
+            </td>
+            <td>
+                 <img  src="images/evilJoker.gif" alt="Alternate Text" />
+            </td>
+        </tr>
+    </table>
+    <table class='notBanner'>   
+        <tr>
+            <td width="70%">
+                <form id="manualInitForm" action="initializer" method="post" >
+                <table>
+                    <tr>
+                          <td width="55%">
+                              Enter Your Name: <input id="name" type="text" name="firstPlayerName" /><span id="msg" class="error"></span><br/> <br />
+                            Choose The Number Of Players: <br />
+                            <input id="2" type="radio" name="numberOfPlayersRadio" value="2" checked="checked"/> 2 <br />
+                            <input id="3" type="radio" name="numberOfPlayersRadio" value="3" /> 3 <br />
+                            <input id="4" type="radio" name="numberOfPlayersRadio" value="4" /> 4 <br /><br /><br />   
+                           </td>
+                            <td style="padding-right:200px"><br/>
+                            Choose The Game End Method: <br />
+                            <input type="radio" name="gameModeRadio" value="singleLimit" checked="checked" /> Single Limit<br />
+                            <input type="radio" name="gameModeRadio" value="gameLimit" /> Game Limit<br />
+                            <input type="radio" name="gameModeRadio" value="turns" /> Turns <br />
+                            <br />
+                            set the value for the game end method:<br />
+                            <input id="endGameValue" type="text" name="endValueText" value="50" />
+                            </td>
+                        </tr>
+                         <tr id="playersDetailsPanel">
+                        </tr>
+                </table>
+                         
+                </form> 
+                <button id="submitManual">Submit</button>
+                </td>
+                <td width="50%"><br />
+                    <div id="xmlInit">
+                    Click the button below, to init the game using XML file.
+                    <form action="XMLinitializer" method="post" enctype="multipart/form-data">
+                        <input type="file" name="XMLfilePath" size="50" accept="text/xml"  />
+                        <input type="submit"/>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table><br/>
+           <table>
+        <tr>
+            <td>
+                <div>
+                    <table>
+                       
+                    
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+      
+   
+</body>
+</html>

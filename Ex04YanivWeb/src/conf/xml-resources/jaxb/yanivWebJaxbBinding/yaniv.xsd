@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="yaniv">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="4" minOccurs="2" name="player" type="player"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="gameEndType" type="game_end_type"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="gameEndValue" type="xs:int"/>
+				<xs:element name="deck" type="deck"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+<!--	Player Definition-->
+	<xs:complexType name="player">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="type" type="player_type" use="required"/>
+	</xs:complexType>
+
+	<xs:simpleType name="player_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HUMAN"/>
+			<xs:enumeration value="COMPUTER"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+<!--	Game Definition-->
+	<xs:simpleType name="game_end_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Turns"/>
+			<xs:enumeration value="Single_Player_Limit"/>
+			<xs:enumeration value="First_Player_Limit"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+<!--	Deck Definition-->
+	<xs:complexType name="deck">
+		<xs:sequence>
+			<xs:element name="card" type="card" minOccurs="54" maxOccurs="54"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="card">
+		<xs:attribute name="joker" type="xs:boolean" use="optional" default="false"/>
+		<xs:attribute name="rank" type="rank" use="optional"/>
+		<xs:attribute name="suit" type="suit" use="optional"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="rank">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACE"/>
+			<xs:enumeration value="DEUCE"/>
+			<xs:enumeration value="THREE"/>
+			<xs:enumeration value="FOUR"/>
+			<xs:enumeration value="FIVE"/>
+			<xs:enumeration value="SIX"/>
+			<xs:enumeration value="SEVEN"/>
+			<xs:enumeration value="EIGHT"/>
+			<xs:enumeration value="NINE"/>
+			<xs:enumeration value="TEN"/>
+			<xs:enumeration value="JACK"/>
+			<xs:enumeration value="QUEEN"/>
+			<xs:enumeration value="KING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="suit">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CLUBS"/>
+			<xs:enumeration value="DIAMONDS"/>
+			<xs:enumeration value="HEARTS"/>
+			<xs:enumeration value="SPADES"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
